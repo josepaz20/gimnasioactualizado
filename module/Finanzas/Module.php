@@ -39,14 +39,19 @@ class Module {
     public function getServiceConfig() {
         return array(
             'factories' => array(
-                'finanzas\Modelo\DAO\FinanzasDAO' => function($sm) {
+                   'finanzas\Modelo\DAO\FinanzasDAO' => function($sm) {
                     $dbAdapter = $sm->get('dbjosandro_');
                     $tabla = new Modelo\DAO\FinanzasDAO($dbAdapter);
                     return $tabla;
                 },
-                'finanzas\Modelo\DAO\ProductosDAO' => function($sm) {
+                   'finanzas\Modelo\DAO\ProductosDAO' => function($sm) {
                     $dbAdapter = $sm->get('dbjosandro_');
                     $tabla = new Modelo\DAO\ProductosDAO($dbAdapter);
+                    return $tabla;
+                },
+                   'finanzas\Modelo\DAO\AsistenciaDAO' => function($sm) {
+                    $dbAdapter = $sm->get('dbjosandro_');
+                    $tabla = new Modelo\DAO\AsistenciaDAO($dbAdapter);
                     return $tabla;
                 },
                 

@@ -5,7 +5,7 @@ $form->prepare();
 echo $this->form()->openTag($form);
 ?>
 <fieldset>
-    <legend>REGISTRO DE CLIENTE</legend>   
+    <legend>ACTUALIZACION DE CLIENTE</legend>   
     <div class="form-group">
         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="empleado">Encargado<span class="required">*</span></label>
         <div class="col-md-6 col-sm-6 col-xs-12">
@@ -31,7 +31,7 @@ echo $this->form()->openTag($form);
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="entrenamiento">Entrenamiento<span class="required">*</span></label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="entrenamiento">Entrenamiento</label>
         <div class="col-md-6 col-sm-6 col-xs-12">
             <?php echo $this->formRow($form->get('entrenamiento')); ?>
         </div>
@@ -50,7 +50,7 @@ echo $this->form()->openTag($form);
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="fecharet">Fecha de Corte <span class="required">*</span></label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="fecharet">Fecha de Retiro <span class="required">*</span></label>
         <div class="col-md-6 col-sm-6 col-xs-12">
             <?php echo $this->formRow($form->get('fecharet')); ?>
         </div>
@@ -68,15 +68,9 @@ echo $this->form()->openTag($form);
             <?php echo $this->formRow($form->get('antecedentes')); ?>
         </div>
     </div>
-    <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="comprobante">Comprobante<span class="required">*</span></label>
-        <div class="col-md-6 col-sm-6 col-xs-12">
-            <?php echo $this->formRow($form->get('comprobante')); ?>
-        </div>
-    </div>
 
-    <div>
-        <div id="divInfoEntrenamiento" hidden>
+    <div 
+        <div id="divInfoEntrenamiento" hidden >
             <legend>PAGO DE CLIENTE</legend>
             <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="valor">Costo.<span class="required">*</span></label>
@@ -97,13 +91,6 @@ echo $this->form()->openTag($form);
                     <?php echo $this->formRow($form->get('ingreso')); ?>
                 </div>
             </div>
-
-            <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="devolucion">Devolución<span class="required">*</span></label>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <?php echo $this->formRow($form->get('devolucion')); ?>
-                </div>
-            </div>
             <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="pendiente">Pendiente<span class="required">*</span></label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
@@ -111,6 +98,12 @@ echo $this->form()->openTag($form);
                 </div>
             </div>
 
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="estado">Estado <span class="required">*</span></label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <?php echo $this->formRow($form->get('estado')); ?>
+                </div>
+            </div
         </div>
     </div>
     <div class="ln_solid"></div>
@@ -124,63 +117,50 @@ echo $this->form()->openTag($form);
                 </div>
             </div>
         </div>
-    </fieldset>     
-</div>
 
-<div class="ln_solid"></div>
-<fieldset>
-    <legend>VALORACIÓN DE CLIENTE</legend>
-    <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="objetivo">Objetivo<span class="required">*</span></label>
-        <div class="col-md-6 col-sm-6 col-xs-12">
-            <?php echo $this->formRow($form->get('objetivo')); ?>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="estatura">Estatura <span class="required">*</span></label>
-        <div class="col-md-6 col-sm-6 col-xs-12">
-            <?php echo $this->formRow($form->get('estatura')); ?>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="peso">Peso<span class="required">*</span></label>
-        <div class="col-md-6 col-sm-6 col-xs-12">
-            <?php echo $this->formRow($form->get('peso')); ?>
-        </div>
-    </div>
 
-    <div hidden>
+
+        <div class="ln_solid"></div>
+    </fieldset>
+
+    <fieldset>
+        <legend>VALORACIÓN DE CLIENTE</legend>
         <div class="form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="idRegistro">Id Registro <span class="required">*</span></label>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="objetivo">Objetivo<span class="required">*</span></label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-                <?php echo $this->formRow($form->get('idRegistro')); ?>
+                <?php echo $this->formRow($form->get('objetivo')); ?>
             </div>
         </div>
-    </div>
-
-
-    <div class="ln_solid"></div>
-
-</fieldset>
-<fieldset>
-    <legend>ESTADO DE CLIENTE</legend>
-    <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="estado">Estado<span class="required">*</span></label>
-        <div class="col-md-6 col-sm-6 col-xs-12">
-            <?php echo $this->formRow($form->get('estado')); ?>
+        <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="estatura">Estatura <span class="required">*</span></label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <?php echo $this->formRow($form->get('estatura')); ?>
+            </div>
         </div>
-    </div>
-</fieldset>
-<div class="form-group">
-    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-        <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> REGISTRAR</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i> CERRAR</button>
+        <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="peso">Peso<span class="required">*</span></label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <?php echo $this->formRow($form->get('peso')); ?>
+            </div>
+        </div>
 
-    </div>
-</div>
+        <div hidden>
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="idRegistro">Id Registro <span class="required">*</span></label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <?php echo $this->formRow($form->get('idRegistro')); ?>
+                </div>
+            </div>
+        </div>
 
 
+        <div class="ln_solid"></div>
+        <div class="form-group">
+            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> ACTUALIZAR</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i> CERRAR</button>
 
-
-
-<?php echo $this->form()->closeTag(); ?>
+            </div>
+        </div>
+    </fieldset>
+    <?php echo $this->form()->closeTag();

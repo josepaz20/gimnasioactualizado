@@ -43,7 +43,7 @@ if ($sesionUsuario = $this->identity()) {
                      
                     <li><a><i class="fa fa-user" style="color: #fafafa"></i> GIMNASIO<span class="fa fa-chevron-down" style="color: #fafafa"></span></a>
                         <ul class="nav child_menu">
-                            
+                            <li class="sub_menu"><a href="<?php echo $this->url('finanzas/default', array('controller' => 'asistencia', 'action' => 'index')) ?>"> ASISTENCIA DE CLIENTES</a></li>
                             <li class="sub_menu"><a href="<?php echo $this->url('finanzas/default', array('controller' => 'cajaspersonales', 'action' => 'index')) ?>"> REGISTRO DE CLIENTES</a></li>
                             <li class="sub_menu"><a href="<?php echo $this->url('finanzas/default', array('controller' => 'productos', 'action' => 'index')) ?>"> VENTA DE PRODUCTOS</a></li>
                             

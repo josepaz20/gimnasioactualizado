@@ -17,6 +17,35 @@ return array(
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
             // using the path /application/:controller/:action
+            
+            'finanzas' => array(
+                'type' => 'Literal',
+                'options' => array(
+                    'route' => '/asistencia',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'Finanzas\Controller',
+                        'controller' => 'AsistenciaController',
+                        'action' => 'index',
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'default' => array(
+                        'type' => 'Segment',
+                        'options' => array(
+                            'route' => '/:controller/:action[/:id1][/:id2][/:id3]',
+                            'constraints' => array(
+                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id1' => '[a-zA-Z0-9_-]*',
+                                'id2' => '[a-zA-Z0-9_-]*',
+                            ),
+                            'defaults' => array(
+                            ),
+                        ),
+                    ),
+                ),
+            ),
             'finanzas' => array(
                 'type' => 'Literal',
                 'options' => array(
@@ -96,6 +125,7 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
+            'Finanzas\Controller\Asistencia' => 'Finanzas\Controller\AsistenciaController',
             'Finanzas\Controller\Cajaspersonales' => 'Finanzas\Controller\CajaspersonalesController',
             'Finanzas\Controller\Productos' => 'Finanzas\Controller\ProductosController',
         ),

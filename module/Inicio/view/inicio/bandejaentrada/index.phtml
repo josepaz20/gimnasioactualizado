@@ -150,6 +150,32 @@ $idRolMigracion = array(1);
                 <div class="ln_solid"></div>
                 <?php if (in_array($this->idRol, $idRolConsultaAbonado)) { ?>
                     <div class="col-lg-4 col-md-20">
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-20">
+                                        <i class="fa fa-user-circle-o fa-5x"></i>
+                                    </div> &nbsp;
+                                    <div class="col-xs-9 text-right">                        
+                                        <div><b>ASISTENCIA DE<br>CLIENTES</b></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+
+                                <a href="<?php echo $this->url('finanzas/default', array('controller' => 'asistencia', 'action' => 'index')) ?>">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">VER DETALLES</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>                       
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+                <?php if (in_array($this->idRol, $idRolConsultaAbonado)) { ?>
+                    <div class="col-lg-4 col-md-20">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <div class="row">
